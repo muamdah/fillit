@@ -16,9 +16,9 @@
 
 /* -[ 2 ]----- Coordonnee de chaque tetriminos pour determiner la forme ------ */
 
-int     *ft_coor(char *str,int z)
+char     *ft_coor(char *str,int z)
 {
-	int	*tab;
+	char	*tab;
 	int		i;
 	int		a;
 	int    	x;
@@ -27,12 +27,12 @@ int     *ft_coor(char *str,int z)
 	a = 0;
 	i = 0;
 	y = 0;
-	if (!(tab = (int*)malloc(sizeof(int) * 9)))
+	if (!(tab = (char*)malloc(sizeof(char) * 7)))
 		return (NULL);
 	while (str[i] && str[i] != '#')
 		i++;
 	x = i;
-	while (str[x])
+	while (str[++x])
 	{
 		if (str[x] == '\n' && (i = i + 5))
 			y++;
@@ -41,30 +41,28 @@ int     *ft_coor(char *str,int z)
 			tab[a++] = y;
 			tab[a++] = (x - i);
 		}
-		x++;
 	}
-	tab[8] = 65 + z;
+	tab[6] = z;
 	return (tab);
 }
 
 /* -[ 1 ]----- Creation d'un tableau pour recuperer les coordonnees + lettre : Retour MAIN ------*/
 
-int **ft_tab_coor(char **tab, int len)
-{
-	int i;
-	int z;
-	int **tab_coor;
+// char	**ft_tab_coor(char **tab, int len)
+// {
+// 	int i;
+// 	int z;
+// 	char **tab_coor;
 
-	i = 0;
-	z = 0;
-	if (!(tab_coor = (int**)malloc(sizeof(int *) * len)))
-		return (NULL);
-	while (i < len)
-	{
-		tab_coor[i] = ft_coor(tab[i], z + i);
-		i++;
-	}
-	i = 0;
-	ft_position(tab_coor);
-	return (tab_coor);
-}
+// 	i = 0;
+// 	z = 0;
+// 	if (!(tab_coor = (char**)malloc(sizeof(char *) * len + 1)))
+// 		return (NULL);
+// 	while (i < len)
+// 	{
+// 		tab_coor[i] = ft_coor(tab[i], z + i);
+// 		i++;
+// 	}
+// 	i = 0;
+// 	return (tab_coor);
+// }

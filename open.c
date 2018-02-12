@@ -51,6 +51,16 @@ static char		**ft_open2(char **tab, char **argv)
 	return (s);
 }
 
+int		ft_void(int i)
+{
+	if (i == 0)
+	{
+		ft_putendl("error");
+		exit(0);
+	}
+	return (1);
+}
+
 /* -[ 1 ]---- Ouvrir le fichier, lecture et creation d'un tableau : Retour MAIN ------ */
 
 char			**ft_open(char **argv)

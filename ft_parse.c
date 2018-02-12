@@ -27,13 +27,14 @@ int		ft_check_valide(char *tab)
 	{
 		if (tab[i] == '#' && tab[i + 1] == '#')
 			d++;
-		if (tab[i] == '#' && tab[i + 5] == '#')
+		if ((i < 15) && tab[i] == '#' && tab[i + 5] == '#')
 			d++;
-		if (tab[i] == '#' && tab[i - 1] == '#')
+		if ((i > 0) && tab[i] == '#' && tab[i - 1] == '#')
 			d++;
-		if (tab[i] == '#' && tab[i - 5] == '#')
+		if ((i > 4) && tab[i] == '#' && tab[i - 5] == '#')
 			d++;
-		i++;
+		if (tab[i])
+			i++;
 	}
 	if (d == 6 || d == 8)
 	{
@@ -107,7 +108,7 @@ int		ft_main_check(char **tab_check)
 	int i;
 	int b;
 
-	i = 0;
+	i = -1;
 	while (tab_check[i] != NULL)
 	{
 		if (tab_check[i + 1] != NULL)

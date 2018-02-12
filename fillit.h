@@ -22,11 +22,17 @@ int     ft_check_last(char *tab);
 int		ft_check_valide(char *tab);
 int		ft_main_check(char **tab_check);
 
-int     *ft_coor(char *str, int z);
+char     *ft_coor(char *str, int z);
 int 	ft_check(char **tab_1er_check);
-int     **ft_tab_coor(char **tab, int len);
-char    **ft_map(int c);
-void    ft_position(int **tab);
-//int     taille_map();
+char     **ft_tab_coor(char **tab, int len);
+
+char	**ft_map(int i);
+int		ft_count(char **map);
+int		ft_position(char *gps, char **map, int x, int y);
+int		ft_fill(char **gps, char **map, int i);
+void	ft_aff(char **tab);
+char	**ft_map2(char **tab, int i);
+void	ft_delete(char *gps, char **map);
+int		ft_void(int i);
 
 #endif

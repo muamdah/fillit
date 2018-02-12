@@ -17,17 +17,18 @@
 int		main(int argc, char **argv)
 {
 	char	**tab_check;
-	int		i;
+	int		len;
 
-	i = 0;
+	len = 0;
 	tab_check = ft_open(argv);
-	while (tab_check[i])
-		i++;
 	if (argc == 2)
 	{
+		while (tab_check[len])
+			len++;
+		printf("%d\n", len);
 		if(ft_main_check(tab_check))
 		{
-			ft_tab_coor(tab_check, i);
+			ft_aff(ft_map2(tab_check, len));
 			printf("oui dans le main");
 		}
 	}
