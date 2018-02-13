@@ -41,7 +41,7 @@ static char		**ft_open2(char **tab, char **argv)
 	while ((ret = read(fd, buf, BUF_SIZE)))
 	{
 		buf[ret] = '\0';
-		s[i++] = strdup(buf);
+		s[i++] = ft_strdup(buf);
 	}
 	s[i] = NULL;
 	if (close(fd) == -1)
@@ -80,7 +80,7 @@ char			**ft_open(char **argv)
 	}
 	while ((ret = read(fd, buf, BUF_SIZE)))
 		i++;
-	if (!(tab = (char**)malloc(sizeof(char*) * i)))
+	if (!(tab = (char**)malloc(sizeof(char*) * i + 1)))
 		return (NULL);
 	tab[i] = NULL;
 	if (close(fd) == -1)

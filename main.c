@@ -25,12 +25,8 @@ int		main(int argc, char **argv)
 	{
 		while (tab_check[len])
 			len++;
-		printf("%d\n", len);
-		if(ft_main_check(tab_check))
-		{
+		if(ft_main_check(tab_check, len))
 			ft_aff(ft_map2(tab_check, len));
-			printf("oui dans le main");
-		}
 	}
 	return (0);
 }

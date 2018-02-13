@@ -13,7 +13,7 @@
 #include "fillit.h"
 #include <stdio.h>
 
-void	ft_delete(char *tab_coor, char **map)
+void	ft_delete(int *tab_coor, char **map)
 {
 	int x;
 	int y;
@@ -22,7 +22,7 @@ void	ft_delete(char *tab_coor, char **map)
 	y = 0;
 	while (map[y])
 	{
-		if (map[y][x] == tab_coor[6])
+		if (map[y][x] == tab_coor[8])
 			map[y][x] = '.';
 		x++;
 		if (map[y][x] == '\0')
@@ -45,13 +45,13 @@ void	ft_aff(char **tab)
 char	**ft_map2(char **tab, int i)
 {
 	char	**map2;
-    char	**tab_final;
+    int		**tab_final;
     int     size;
     int    lettre;
-
+int c = 0;
     size = 0;
     lettre = 65;
-    if (!(tab_final = (char**)malloc(sizeof(char*) * (i + 1))))
+    if (!(tab_final = (int**)malloc(sizeof(int*) * (i + 1))))
         return (NULL);
 	while (tab[size])
 	{

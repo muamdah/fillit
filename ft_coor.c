@@ -16,9 +16,9 @@
 
 /* -[ 2 ]----- Coordonnee de chaque tetriminos pour determiner la forme ------ */
 
-char     *ft_coor(char *str,int z)
+int     *ft_coor(char *str,int z)
 {
-	char	*tab;
+	int		*tab;
 	int		i;
 	int		a;
 	int    	x;
@@ -27,11 +27,11 @@ char     *ft_coor(char *str,int z)
 	a = 0;
 	i = 0;
 	y = 0;
-	if (!(tab = (char*)malloc(sizeof(char) * 7)))
+	if (!(tab = (int*)malloc(sizeof(int) * (9))))
 		return (NULL);
 	while (str[i] && str[i] != '#')
 		i++;
-	x = i;
+	x = i - 1;
 	while (str[++x])
 	{
 		if (str[x] == '\n' && (i = i + 5))
@@ -42,7 +42,7 @@ char     *ft_coor(char *str,int z)
 			tab[a++] = (x - i);
 		}
 	}
-	tab[6] = z;
+	tab[8] = z;
 	return (tab);
 }
 

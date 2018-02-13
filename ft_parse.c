@@ -103,25 +103,21 @@ int		ft_check1(char *tab)
 
 /* -[ 1 ]----- Verification complete retour sur MAIN ------*/
 
-int		ft_main_check(char **tab_check)
+int		ft_main_check(char **tab_check, int len)
 {
 	int i;
 	int b;
 
-	i = -1;
-	while (tab_check[i] != NULL)
+	i = 0;
+	while (i < len)
 	{
-		if (tab_check[i + 1] != NULL)
+		if (i < len - 1)
 			b = ft_check1(tab_check[i]);
-		if (tab_check[i + 1] == NULL)
+		if (i + 1 == len)
 			b = ft_check_last(tab_check[i]);
 		if (b == 0)
-		{
-			printf("non dans le parse");
 			return (0);
-		}
 		i++;
 	}
-	printf("oui dans le parse\n");
 	return (1);
 }
