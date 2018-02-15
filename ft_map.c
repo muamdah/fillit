@@ -6,7 +6,7 @@
 /*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/01 09:20:47 by muamdah           #+#    #+#             */
-/*   Updated: 2018/02/15 11:56:02 by muamdah          ###   ########.fr       */
+/*   Updated: 2018/02/15 13:10:56 by muamdah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* -[ 4 ]----- Suppression des tetriminos qui ne s'insserent pas  ----- */
 
-static void	ft_delete(int *tab_coor, char **map)
+static void		ft_delete(int *tab_coor, char **map)
 {
 	int x;
 	int y;
@@ -79,10 +79,9 @@ int				ft_fill(int **tab_final, char **map, int i)
 {
 	int	x;
 	int	y;
-	
+
 	x = 0;
 	y = 0;
-
 	if (!tab_final[i])
 		return (1);
 	while (map[y])

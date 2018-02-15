@@ -6,11 +6,12 @@
 /*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/28 14:00:24 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/25 18:45:29 by muamdah          ###   ########.fr       */
+/*   Updated: 2018/02/15 13:00:53 by muamdah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include "libft/libft.h"
 
 int		main(int argc, char **argv)
 {
@@ -24,8 +25,10 @@ int		main(int argc, char **argv)
 		while (tab_check[len])
 			len++;
 		ft_void(len);
-		if(ft_main_check(tab_check, len))
+		if (ft_main_check(tab_check, len))
 			ft_aff(ft_map2(tab_check, len));
 	}
+	if (argc != 2)
+		ft_putendl("usage: ./fillit [file]");
 	return (0);
 }

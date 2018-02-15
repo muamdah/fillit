@@ -6,7 +6,7 @@
 /*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/28 14:12:49 by muamdah           #+#    #+#             */
-/*   Updated: 2018/02/15 11:50:22 by muamdah          ###   ########.fr       */
+/*   Updated: 2018/02/15 13:11:29 by muamdah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 /* -[ 5 ]---- Parse aucun tetriminos ou au dela de 26 -----*/
 
-int		ft_void(int i)
+int				ft_void(int i)
 {
-	if (i < 0 || i > 26)
+	if (i <= 0 || i > 26)
 	{
 		ft_putendl("error");
 		exit(0);
@@ -48,9 +48,7 @@ static int		ft_check_valide(char *tab)
 			i++;
 	}
 	if (d == 6 || d == 8)
-	{
 		return (1);
-	}
 	return (0);
 }
 
@@ -127,7 +125,10 @@ int				ft_main_check(char **tab_check, int len)
 		if (i + 1 == len)
 			b = ft_check_last(tab_check[i]);
 		if (b == 0)
+		{
+			ft_putendl("error");
 			return (0);
+		}
 		i++;
 	}
 	return (1);
