@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memshr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: miclaude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/28 14:00:24 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/25 18:45:29 by muamdah          ###   ########.fr       */
+/*   Created: 2017/11/12 11:26:44 by miclaude          #+#    #+#             */
+/*   Updated: 2017/11/22 14:40:30 by miclaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	**tab_check;
-	int		len;
+	unsigned char	t;
+	unsigned int	i;
+	unsigned char	*s1;
 
-	len = 0;
-	if (argc == 2)
+	i = 0;
+	s1 = (unsigned char*)s;
+	t = (unsigned char)c;
+	while (i < n)
 	{
-		tab_check = ft_open(argv);
-		while (tab_check[len])
-			len++;
-		ft_void(len);
-		if(ft_main_check(tab_check, len))
-			ft_aff(ft_map2(tab_check, len));
+		if ((unsigned char)s1[i] == t)
+			return (&s1[i]);
+		i++;
 	}
 	return (0);
 }

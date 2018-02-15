@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_coor.c                                          :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: miclaude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/29 10:25:20 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/29 19:08:53 by muamdah          ###   ########.fr       */
+/*   Created: 2017/11/12 11:52:56 by miclaude          #+#    #+#             */
+/*   Updated: 2017/11/22 15:42:00 by miclaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
-#include "fillit.h"
-#include <stdio.h>
+#include "libft.h"
 
+void	*ft_memalloc(size_t size)
+{
+	char *str;
+
+	if (!(str = (char*)malloc(sizeof(size_t) * size)))
+		return (0);
+	ft_bzero(str, size);
+	return ((void*)str);
+}

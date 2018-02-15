@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_coor.c                                          :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: miclaude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/29 10:25:20 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/29 19:08:53 by muamdah          ###   ########.fr       */
+/*   Created: 2017/11/12 17:50:18 by miclaude          #+#    #+#             */
+/*   Updated: 2017/12/17 19:47:30 by miclaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
-#include "fillit.h"
-#include <stdio.h>
+#include "libft.h"
 
+void	ft_strdel(char **as)
+{
+	if (as)
+	{
+		free(*as);
+		*as = NULL;
+	}
+}

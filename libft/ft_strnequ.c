@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: miclaude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/28 14:00:24 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/25 18:45:29 by muamdah          ###   ########.fr       */
+/*   Created: 2017/11/13 12:20:12 by miclaude          #+#    #+#             */
+/*   Updated: 2017/11/19 16:02:55 by miclaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "stdlib.h"
 
-int		main(int argc, char **argv)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	char	**tab_check;
-	int		len;
+	size_t i;
 
-	len = 0;
-	if (argc == 2)
+	i = 0;
+	if (s1 && s2)
 	{
-		tab_check = ft_open(argv);
-		while (tab_check[len])
-			len++;
-		ft_void(len);
-		if(ft_main_check(tab_check, len))
-			ft_aff(ft_map2(tab_check, len));
+		while (i < n)
+		{
+			if (s1[i] != s2[i])
+				return (0);
+			else if (s1[i] == s2[i])
+				i++;
+		}
+		return (1);
 	}
 	return (0);
 }

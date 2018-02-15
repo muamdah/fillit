@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_coor.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: miclaude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/29 10:25:20 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/29 19:08:53 by muamdah          ###   ########.fr       */
+/*   Created: 2017/11/09 13:48:02 by miclaude          #+#    #+#             */
+/*   Updated: 2017/11/21 20:05:23 by miclaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
-#include "fillit.h"
-#include <stdio.h>
+#include "libft.h"
 
+char	*ft_strrchr(const char *s, int c)
+{
+	int i;
+
+	i = ft_strlen(s);
+	while (s[i] != c && i > 0)
+		i--;
+	if (i == 0 && s[i] != c)
+		return (0);
+	return ((char *)&s[i]);
+}

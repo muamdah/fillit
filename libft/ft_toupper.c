@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_coor.c                                          :+:      :+:    :+:   */
+/*   toupper.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: miclaude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/29 10:25:20 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/29 19:08:53 by muamdah          ###   ########.fr       */
+/*   Created: 2017/11/09 12:49:50 by miclaude          #+#    #+#             */
+/*   Updated: 2017/11/16 11:29:48 by miclaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
-#include "fillit.h"
-#include <stdio.h>
+#include "stdlib.h"
 
+int		ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
+}

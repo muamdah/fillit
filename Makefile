@@ -10,31 +10,41 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = fillit
+
+INCLUDES = .
+
+LIBFT = libft/libft.a
+
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+SRC = ft_parse.c ft_open.c ft_map.c ft_map_suite.c main.c \
 
-NAME = fillit.a
+CFLAGS = -c -Wall -Wextra -Werror -I$(INCLUDES) -Ilibft
 
-SRC = ft_parse.c open.c ft_coor.c \
+LFLAGS  = -L libft/ -lft
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(FLAGS) -c -o $@ $<
+$(NAME): $(OBJS) $(LIBFT) $(INCLUDES)
+	$(CC) $(LFLAGS) $(OBJS) -o $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+%.o: %.c
+	$(CC) $(CFLAGS) $< -o $@
+
+$(LIBFT):
+	make -C libft
 
 clean:
-	/bin/rm -f *.o
+	make clean -C libft
+	rm -f $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	make fclean -C libft
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean re
+.PHONY: all clean fclean re

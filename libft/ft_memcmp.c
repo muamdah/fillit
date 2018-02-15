@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: miclaude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/28 14:00:24 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/25 18:45:29 by muamdah          ###   ########.fr       */
+/*   Created: 2017/11/11 18:38:44 by miclaude          #+#    #+#             */
+/*   Updated: 2017/11/20 14:03:46 by miclaude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	**tab_check;
-	int		len;
+	size_t				i;
+	const unsigned char	*s11;
+	const unsigned char	*s22;
 
-	len = 0;
-	if (argc == 2)
+	s11 = s1;
+	s22 = s2;
+	i = 0;
+	while (i < n)
 	{
-		tab_check = ft_open(argv);
-		while (tab_check[len])
-			len++;
-		ft_void(len);
-		if(ft_main_check(tab_check, len))
-			ft_aff(ft_map2(tab_check, len));
+		if (s11[i] != s22[i])
+			return (s11[i] - s22[i]);
+		i++;
 	}
 	return (0);
 }

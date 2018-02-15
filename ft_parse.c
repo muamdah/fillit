@@ -6,20 +6,31 @@
 /*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/28 14:12:49 by muamdah           #+#    #+#             */
-/*   Updated: 2018/01/25 18:45:03 by muamdah          ###   ########.fr       */
+/*   Updated: 2018/02/15 11:50:22 by muamdah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
+#include "libft/libft.h"
 
+/* -[ 5 ]---- Parse aucun tetriminos ou au dela de 26 -----*/
+
+int		ft_void(int i)
+{
+	if (i < 0 || i > 26)
+	{
+		ft_putendl("error");
+		exit(0);
+	}
+	return (1);
+}
 
 /* -[ 4 ]----- Verification des tetriminos 3eme etape : 6 ou 8 liens entre les '#' ------*/
 
-int		ft_check_valide(char *tab)
+static int		ft_check_valide(char *tab)
 {
-	int i;
-	int d;
+	int		i;
+	int		d;
 
 	i = 0;
 	d = 0;
@@ -40,12 +51,12 @@ int		ft_check_valide(char *tab)
 	{
 		return (1);
 	}
-		return (0);
+	return (0);
 }
 
 /* -[ 3 ]----- Verification des tetriminos 2eme etape : dernier tetriminos '\n' ------*/
 
-int		ft_check_last(char *tab)
+static int		ft_check_last(char *tab)
 {
 	int		i;
 	int		p;
@@ -72,9 +83,9 @@ int		ft_check_last(char *tab)
 	return (0);
 }
 
-/* -[ 2 ]----- Verification des tetriminos 1er etape : 4 '#' ------*/
+/* -[ 2 ]----- Verification des tetriminos 1er etape : 4 '#' ------ */
 
-int		ft_check1(char *tab)
+static int		ft_check1(char *tab)
 {
 	int		i;
 	int		p;
@@ -97,16 +108,16 @@ int		ft_check1(char *tab)
 		i++;
 	}
 	if (p == 12 && dz == 4 && n == 5)
-		return (ft_check_valide(tab));	
+		return (ft_check_valide(tab));
 	return (0);
 }
 
 /* -[ 1 ]----- Verification complete retour sur MAIN ------*/
 
-int		ft_main_check(char **tab_check, int len)
+int				ft_main_check(char **tab_check, int len)
 {
-	int i;
-	int b;
+	int		i;
+	int		b;
 
 	i = 0;
 	while (i < len)
