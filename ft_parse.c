@@ -6,12 +6,13 @@
 /*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/28 14:12:49 by muamdah           #+#    #+#             */
-/*   Updated: 2018/02/15 13:11:29 by muamdah          ###   ########.fr       */
+/*   Updated: 2018/02/15 18:37:24 by muamdah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include "libft/libft.h"
+#include <stdio.h>
 
 /* -[ 5 ]---- Parse aucun tetriminos ou au dela de 26 -----*/
 
@@ -71,12 +72,12 @@ static int		ft_check_last(char *tab)
 			p++;
 		if (tab[i] == '#')
 			dz++;
-		if (tab[i] == '\n' && tab[4] == '\n' && tab[9] == '\n' && tab[14] ==
-				'\n' && tab[19] == '\n' && tab[20] == '\0')
+		if (tab[i] == '\n' &&  tab[4] == '\n' && tab[9] == '\n' && tab[14] ==
+			'\n' && tab[19] == '\0')
 			n++;
 		i++;
 	}
-	if (p == 12 && dz == 4 && n == 4)
+	if (p == 12 && dz == 4 && n == 3)
 		return (ft_check_valide(tab));
 	return (0);
 }
@@ -101,7 +102,7 @@ static int		ft_check1(char *tab)
 		if (tab[i] == '#')
 			dz++;
 		if (tab[i] == '\n' && tab[4] == '\n' && tab[9] == '\n' && tab[14] ==
-				'\n' && tab[19] == '\n' && tab[20] == '\n')
+			'\n' && tab[19] == '\n' && tab[20] == '\n')
 			n++;
 		i++;
 	}
