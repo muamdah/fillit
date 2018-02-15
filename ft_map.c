@@ -6,7 +6,7 @@
 /*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/01 09:20:47 by muamdah           #+#    #+#             */
-/*   Updated: 2018/02/15 13:10:56 by muamdah          ###   ########.fr       */
+/*   Updated: 2018/02/15 15:41:32 by muamdah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,6 @@ static int		ft_count(char **map)
 
 static int		ft_position(int *tab_coor, char **map, int x, int y)
 {
-	if (x + tab_coor[1] < 0 || y + tab_coor[0] >= ft_count(map) ||
-		map[y + tab_coor[0]][x + tab_coor[1]] != '.')
-		return (0);
 	if (x + tab_coor[3] < 0 || y + tab_coor[2] >= ft_count(map) ||
 		map[y + tab_coor[2]][x + tab_coor[3]] != '.')
 		return (0);
