@@ -6,7 +6,7 @@
 /*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 04:57:26 by muamdah           #+#    #+#             */
-/*   Updated: 2018/02/15 16:12:47 by muamdah          ###   ########.fr       */
+/*   Updated: 2018/02/15 16:21:10 by muamdah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ static char		**ft_open2(char **tab, char **argv)
 	i = 0;
 	fd = open(argv[1], O_RDWR);
 	if (fd == -1)
-	{
-		ft_putendl("error");
 		exit(0);
-	}
 	if (!(s))
 		return (NULL);
 	while ((ret = read(fd, buf, BUF_SIZE)))
@@ -44,11 +41,8 @@ static char		**ft_open2(char **tab, char **argv)
 	}
 	s[i] = NULL;
 	if (close(fd) == -1)
-	{
-		ft_putendl("error");
 		exit(0);
-	}
-		return (s);
+	return (s);
 }
 
 /* -[ 1 ]---- Ouvrir le fichier, lecture et creation d'un tableau : Retour MAIN ------ */
@@ -78,6 +72,6 @@ char			**ft_open(char **argv)
 		ft_putendl("error");
 		exit(0);
 	}
-		tab = ft_open2(tab, argv);
+	tab = ft_open2(tab, argv);
 	return (tab);
 }
