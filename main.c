@@ -6,7 +6,7 @@
 /*   By: muamdah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/28 14:00:24 by muamdah           #+#    #+#             */
-/*   Updated: 2018/02/15 13:00:53 by muamdah          ###   ########.fr       */
+/*   Updated: 2018/02/15 16:13:21 by muamdah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int argc, char **argv)
 		if (ft_main_check(tab_check, len))
 			ft_aff(ft_map2(tab_check, len));
 	}
-	if (argc != 2)
+	else
 		ft_putendl("usage: ./fillit [file]");
 	return (0);
 }
